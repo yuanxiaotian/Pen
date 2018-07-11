@@ -21,9 +21,7 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
 
     override fun initView() {
         loadRootFragment(addViewId(),MainFragment())
-
     }
-
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(event: AppEvent) {
