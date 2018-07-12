@@ -18,6 +18,8 @@ class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
         bt_manage.setOnClickListener { }
 
         //我的笔记
-        bt_mePen.setOnClickListener { }
+        bt_mePen.setOnClickListener {
+            start(MyNoteFragment())
+        }
     }
 }
