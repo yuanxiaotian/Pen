@@ -1,6 +1,7 @@
 package com.xuliucar.car.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.cangmaomao.lib.base.BaseFragment
 import com.xuliucar.car.R
@@ -18,6 +19,7 @@ class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
 
         //智能笔管理
         bt_manage.setOnClickListener {
+            Log.e("msg","d")
             popTo(PenMangeFragmet::class.java,true)
 //            start(PenMangeFragmet::class.java)
         }

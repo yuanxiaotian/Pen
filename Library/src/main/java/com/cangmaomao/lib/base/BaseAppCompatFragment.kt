@@ -24,7 +24,7 @@ import me.yokeyword.fragmentation.SupportFragment
 abstract class BaseAppCompatFragment : SupportFragment() {
 
     protected var mContext: Context? = null
-    protected var mView: View? = null
+    var mView: View? = null
     private var mMultipleStatusLayout: MultipleStatusLayout? = null
 
     /**
