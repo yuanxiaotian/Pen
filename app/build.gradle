@@ -35,7 +35,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':m_penManage')
     implementation project(':m_mePen')
-    implementation project(':Library')
 }
 repositories {
     mavenCentral()
