@@ -18,7 +18,8 @@ public class MyCollectFragment extends BaseFragment {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar), R.string.my_collect);
+        initToolBarNav(Objects.requireNonNull(getMView())
+                .findViewById(R.id.toolbar), R.string.my_collect);
     }
 
     @Override

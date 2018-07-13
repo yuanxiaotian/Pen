@@ -15,3 +15,5 @@ val f_aboutNote=0x117
 val f_editSort=0x118
 
 val f_openPen=0x119
+
+val f_often_conn=0x120

@@ -1,12 +1,12 @@
 package com.xuliucar.car.ui.activity
 
-import android.view.KeyEvent
 import com.cangmaomao.lib.action.*
 import com.cangmaomao.lib.base.BaseActivity
 import com.cangmaomao.lib.event.AppEvent
 import com.xuliucar.car.R
 import com.xuliucar.car.contract.MainContract
 import com.xuliucar.car.ui.fragment.*
+import com.xuliucar.car.ui.fragment.manage.OftenConnFragment
 import com.xuliucar.car.ui.fragment.manage.PenMangeFragmet
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -47,6 +47,7 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
             f_aboutNote -> start(AboutNoteFragment())
             f_editSort -> start(EditSortFragment())
             f_openPen -> start(OpenPenFragment())
+            f_often_conn->start(OftenConnFragment())
         }
     }
 

@@ -26,7 +26,7 @@
 
     <CheckBox
         style="@style/custom_checkbox"
-        android:checked="false"
+        android:checked="true"
         android:id="@+id/iv_manage"
         android:layout_marginRight="10dp"
         android:layout_gravity="center_vertical"
@@ -35,7 +35,6 @@
 </LinearLayout>
 
     <TextView
-        android:gravity="center_horizontal"
         android:textSize="13dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -44,7 +43,9 @@
         android:layout_height="wrap_content" />
 
     <FrameLayout
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/fl_manage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
