@@ -2,6 +2,7 @@ package com.xuliucar.car.ui.fragment
 
 import android.os.Bundle
 import com.cangmaomao.lib.action.f_myNote
+import com.cangmaomao.lib.action.f_openPen
 import com.cangmaomao.lib.action.f_penManage
 import com.cangmaomao.lib.base.BaseFragment
 import com.cangmaomao.lib.event.AppEvent
@@ -19,7 +20,7 @@ class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
     override fun initView(savedInstanceState: Bundle?) {
         //开启笔记
         iv_c.setOnClickListener {
-            toast("开启笔迹")
+            EventBus.getDefault().post(AppEvent(f_openPen))
         }
 
         //智能笔管理

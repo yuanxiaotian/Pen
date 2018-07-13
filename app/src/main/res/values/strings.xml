@@ -7,5 +7,5 @@
     <string name="edit_sort">编辑分类</string>
     <string name="clear_collect">清空收藏</string>
     <string name="add_sort">新建分类</string>
-
+    <string name="fileName">文件夹</string>
 </resources>

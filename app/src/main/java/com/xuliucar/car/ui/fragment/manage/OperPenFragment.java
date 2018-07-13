@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
  * Created by Administrator on 2018/7/11 0011.
  */
 
-public class OperPenFragment extends BaseFragment<OpenPenContract.OpenPenPresenter> {
+public class OperPenFragment extends BaseFragment<OpenPenContract.Presenter> {
 
 
     public void initView(@Nullable Bundle savedInstanceState) {

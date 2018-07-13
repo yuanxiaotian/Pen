@@ -1,5 +1,6 @@
 package com.xuliucar.car.ui.activity
 
+import android.view.KeyEvent
 import com.cangmaomao.lib.action.*
 import com.cangmaomao.lib.base.BaseActivity
 import com.cangmaomao.lib.event.AppEvent
@@ -45,6 +46,15 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
             f_myCollect -> start(MyCollectFragment())
             f_aboutNote -> start(AboutNoteFragment())
             f_editSort -> start(EditSortFragment())
+            f_openPen -> start(OpenPenFragment())
+        }
+    }
+
+    override fun onBackPressedSupport() {
+        if (topFragment == MainFragment()) {
+            finish()
+        } else {
+            pop()
         }
     }
 }
