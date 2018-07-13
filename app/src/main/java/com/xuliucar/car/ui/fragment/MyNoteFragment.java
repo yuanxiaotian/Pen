@@ -4,9 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.cangmaomao.lib.action.FragmentActionKt;
 import com.cangmaomao.lib.base.BaseFragment;
+import com.cangmaomao.lib.event.AppEvent;
 import com.xuliucar.car.R;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
@@ -40,13 +43,13 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fileList://文件列表
-                start(new FileListFragment());
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_fileList()));
                 break;
             case R.id.myCollect://我的收藏
-                start(new MyCollectFragment());
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_myCollect()));
                 break;
             case R.id.aboutNote://关于云享笔迹
-                start(new AboutNoteFragment());
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote()));
                 break;
         }
     }

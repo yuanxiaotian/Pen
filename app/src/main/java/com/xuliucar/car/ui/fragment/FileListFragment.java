@@ -6,11 +6,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.cangmaomao.lib.action.FragmentActionKt;
 import com.cangmaomao.lib.base.BaseFragment;
+import com.cangmaomao.lib.event.AppEvent;
 import com.xuliucar.car.R;
 import com.xuliucar.car.adapter.FileListAdapter;
 import com.xuliucar.car.bean.FileListBean;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -51,7 +54,7 @@ public class FileListFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.preview) {
-            start(new EditSortFragment());
+            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_editSort()));
             return true;
         }
         return super.onOptionsItemSelected(item);

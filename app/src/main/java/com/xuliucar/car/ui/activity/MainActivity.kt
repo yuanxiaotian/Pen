@@ -1,12 +1,11 @@
 package com.xuliucar.car.ui.activity
 
-import com.cangmaomao.lib.action.f_penManage
+import com.cangmaomao.lib.action.*
 import com.cangmaomao.lib.base.BaseActivity
 import com.cangmaomao.lib.event.AppEvent
-import com.cangmaomao.lib.utils.toast
 import com.xuliucar.car.R
 import com.xuliucar.car.contract.MainContract
-import com.xuliucar.car.ui.fragment.MainFragment
+import com.xuliucar.car.ui.fragment.*
 import com.xuliucar.car.ui.fragment.manage.PenMangeFragmet
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -32,20 +31,20 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
         EventBus.getDefault().register(this)
     }
 
-
     public override fun onDestroy() {
         super.onDestroy()
         EventBus.getDefault().unregister(this)
     }
 
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun messageEvent(event: AppEvent) {
-        toast("9923")
         when (event.actionId) {
-            f_penManage ->start(PenMangeFragmet())
-            //myNoteFragment -> start(MyNoteFragment())
+            f_penManage -> start(PenMangeFragmet())
+            f_myNote -> start(MyNoteFragment())
+            f_fileList -> start(FileListFragment())
+            f_myCollect -> start(MyCollectFragment())
+            f_aboutNote -> start(AboutNoteFragment())
+            f_editSort -> start(EditSortFragment())
         }
     }
-
 }
