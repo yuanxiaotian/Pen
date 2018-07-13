@@ -19,7 +19,8 @@ public class AboutNoteFragment extends BaseFragment {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar), R.string.about_note);
+        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar),
+                R.string.about_note);
         mVersionName=getMView().findViewById(R.id.versionName);
         mVersionName.setText(String.valueOf("版本：V"+versionName));
     }
@@ -28,7 +29,8 @@ public class AboutNoteFragment extends BaseFragment {
     protected int getContentViewLayoutID() {
         try {
             //当前包名，0代表是获取版本信息
-            PackageInfo packageInfo = getMContext().getPackageManager().getPackageInfo(getMContext().getPackageName(), 0);
+            PackageInfo packageInfo = getMContext().getPackageManager()
+                    .getPackageInfo(getMContext().getPackageName(), 0);
             versionName = packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
