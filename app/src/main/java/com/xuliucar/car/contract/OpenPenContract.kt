@@ -8,11 +8,11 @@ import com.cangmaomao.lib.base.BaseView
  */
 interface OpenPenContract {
 
-    interface OpenPenView : BaseView<OpenPenPresenter> {
+    interface View : BaseView<Presenter> {
 
     }
 
-    interface OpenPenPresenter : BasePresenter {
+    interface Presenter : BasePresenter {
 
     }
 }
