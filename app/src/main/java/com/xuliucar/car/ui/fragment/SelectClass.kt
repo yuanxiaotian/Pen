@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import com.cangmaomao.lib.base.BaseFragment
-import com.cangmaomao.lib.base.BasePresenter
 import com.xuliucar.car.R
 import com.xuliucar.car.adapter.SelectClassAdapter
 import com.xuliucar.car.contract.SelectClassContract
