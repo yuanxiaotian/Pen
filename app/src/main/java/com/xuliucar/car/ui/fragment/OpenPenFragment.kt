@@ -10,9 +10,14 @@ import com.xuliucar.car.contract.OpenPenContract
  */
 class OpenPenFragment() : BaseFragment<OpenPenContract.Presenter>() {
 
+    override fun onRightClick() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override val contentViewLayoutID: Int
         get() = R.layout.f_openpen
 
     override fun initView(savedInstanceState: Bundle?) {
+        initToolBarNav(getString(R.string.openPen))
     }
 }

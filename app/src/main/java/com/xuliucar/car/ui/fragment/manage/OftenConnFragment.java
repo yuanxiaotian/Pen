@@ -45,4 +45,9 @@ public class OftenConnFragment extends BaseFragment {
     public void setPresenter(Object presenter) {
 
     }
+
+    @Override
+    public void onRightClick(){
+
+    }
 }

@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.f_main.*
 import org.greenrobot.eventbus.EventBus
 
 class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
+    override fun onRightClick() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override val contentViewLayoutID: Int
         get() = R.layout.f_main

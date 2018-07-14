@@ -59,4 +59,8 @@ public class OperPenFragment extends BaseFragment<OpenPenContract.Presenter> {
         return R.layout.f_open_pen;
     }
 
+    @Override
+    public void onRightClick(){
+
+    }
 }

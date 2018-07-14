@@ -53,7 +53,10 @@ public class PenMangeFragmet extends BaseFragment<PenManageContract.ManagePresen
         return R.layout.f_pen_manage;
     }
 
+    @Override
+    public void onRightClick(){
 
+    }
 
 
 }

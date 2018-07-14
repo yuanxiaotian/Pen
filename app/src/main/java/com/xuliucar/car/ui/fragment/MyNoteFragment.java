@@ -20,7 +20,7 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar), R.string.my_note);
+        initToolBarNav(getString(R.string.my_note),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c));
         fileList = getMView().findViewById(R.id.fileList);
         myCollect = getMView().findViewById(R.id.myCollect);
         aboutNote = getMView().findViewById(R.id.aboutNote);
@@ -52,5 +52,10 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
                 EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote()));
                 break;
         }
+    }
+
+    @Override
+    public void onRightClick(){
+
     }
 }

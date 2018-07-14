@@ -1,9 +1,6 @@
 package com.xuliucar.car.ui.fragment;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.cangmaomao.lib.action.FragmentActionKt;
@@ -28,7 +25,7 @@ public class FileListFragment extends BaseFragment {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar), R.string.file_list);
+        initToolBarNav(getString(R.string.file_list),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c),getString(R.string.edit_sort));
         listView = getMView().findViewById(R.id.listView);
         initData();
     }
@@ -47,17 +44,8 @@ public class FileListFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.preview_menu, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.preview) {
-            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_editSort()));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void onRightClick(){
+        EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_editSort()));
     }
 
     @Override
