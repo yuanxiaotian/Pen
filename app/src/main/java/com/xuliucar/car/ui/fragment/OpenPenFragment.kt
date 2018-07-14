@@ -14,5 +14,6 @@ class OpenPenFragment() : BaseFragment<OpenPenContract.Presenter>() {
         get() = R.layout.f_openpen
 
     override fun initView(savedInstanceState: Bundle?) {
+        initToolBarNav(getString(R.string.openPen))
     }
 }

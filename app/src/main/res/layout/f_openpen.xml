@@ -133,7 +133,5 @@
         app:layout_constraintLeft_toLeftOf="@+id/linearLayout4"
         app:layout_constraintRight_toRightOf="@+id/linearLayout4"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-
 </android.support.constraint.ConstraintLayout>
 
