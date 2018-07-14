@@ -3,6 +3,7 @@ package com.xuliucar.car.ui.activity
 import com.cangmaomao.lib.action.*
 import com.cangmaomao.lib.base.BaseActivity
 import com.cangmaomao.lib.event.AppEvent
+import com.cangmaomao.lib.utils.StatusBarUtil
 import com.xuliucar.car.R
 import com.xuliucar.car.contract.MainContract
 import com.xuliucar.car.ui.fragment.*
@@ -24,6 +25,8 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
     }
 
     override fun initView() {
+        StatusBarUtil.setStatusBarColor(this, R.color.c_w)
+        StatusBarUtil.StatusBarLightMode(this)
         loadRootFragment(addViewId(), MainFragment(), false, false)
     }
 
@@ -47,7 +50,7 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
             f_aboutNote -> start(AboutNoteFragment())
             f_editSort -> start(EditSortFragment())
             f_openPen -> start(OpenPenFragment())
-            f_often_conn->start(OftenConnFragment())
+            f_often_conn -> start(OftenConnFragment())
         }
     }
 

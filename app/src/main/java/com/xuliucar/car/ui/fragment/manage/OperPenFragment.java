@@ -29,7 +29,7 @@ public class OperPenFragment extends BaseFragment<OpenPenContract.Presenter> {
     private OpenPenAdapter openPenAdapter,nearbyAdapter;
     private View addHeaderView;
 
-    public void initView(Bundle savedInstanceState) {
+    public void initView() {
         oftenRecycler = getMView().findViewById(R.id.oftenRecycler);
         nearbyRecycler =getMView().findViewById(R.id.nearbyRecycler);
         openPenAdapter = new OpenPenAdapter(2);

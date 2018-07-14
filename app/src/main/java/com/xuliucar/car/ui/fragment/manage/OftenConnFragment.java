@@ -21,10 +21,11 @@ public class OftenConnFragment extends BaseFragment {
     private DeleConnDialog dialog;
 
     @Override
-    public void initView(@Nullable Bundle savedInstanceState) {
+    public void initView() {
         toolbar = getMView().findViewById(R.id.toolbar);
         tv_dele = getMView().findViewById(R.id.tv_dele);
-        initToolBarNav(toolbar,"连接智能笔");
+        initToolBarNav("连接智能笔",toolbar);
+//        initToolBarNav(toolbar,"连接智能笔");
         initListener();
         dialog = new DeleConnDialog(getMContext());
     }

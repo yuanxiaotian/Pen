@@ -33,7 +33,7 @@ abstract class BaseActivity<T : BasePresenter> : SupportActivity() {
         toolbar_subtitle.text = str
     }
 
-    fun backToolbar(view: Toolbar = toolbar) {
+    fun backToolbar(view: Toolbar = toolbar_c) {
         view.setNavigationOnClickListener { finish() }
     }
 

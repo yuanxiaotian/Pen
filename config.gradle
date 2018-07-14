@@ -38,7 +38,8 @@ ext {
             rxpermissions = "0.9.5@aar",
             eventbus = "3.1.1",
             butterknife="8.4.0",
-            recyclerview="27.1.1"
+            recyclerview = "27.1.1",
+            systembartint = "1.0.3"
     ]
 
     dependencies = [
@@ -65,7 +66,8 @@ ext {
             fragmentation          : "me.yokeyword:fragmentation:$rootProject.fragmentation",
             rxpermissions          : "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxpermissions",
             eventbus               : "org.greenrobot:eventbus:$rootProject.eventbus",
-            butterknife            : " com.jakewharton:butterknife:$rootProject.butterknife",
-            recyclerview           : "com.android.support:recyclerview-v7:$rootProject.recyclerview"
+            butterknife            : "com.jakewharton:butterknife:$rootProject.butterknife",
+            recyclerview           : "com.android.support:recyclerview-v7:$rootProject.recyclerview",
+            systembartint          : "com.readystatesoftware.systembartint:systembartint:$rootProject.systembartint"
     ]
 }

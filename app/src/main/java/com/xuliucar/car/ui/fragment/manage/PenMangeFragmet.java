@@ -28,7 +28,8 @@ public class PenMangeFragmet extends BaseFragment<PenManageContract.ManagePresen
     public void initView(Bundle savedInstanceState) {
         toolbar = Objects.requireNonNull(getMView())
                 .findViewById(R.id.toolbar);
-        initToolBarNav(toolbar,"智能笔管理");
+        initToolBarNav("智能笔管理",toolbar);
+//        initToolBarNav(toolbar,"智能笔管理");
         loadRootFragment(R.id.fl_manage, new OperPenFragment());
         iv_manage=  getMView().findViewById(R.id.iv_manage);
         fl_manage = getMView().findViewById(R.id.fl_manage);

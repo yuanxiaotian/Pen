@@ -1,10 +1,13 @@
 package com.cangmaomao.lib.base
 
 import android.os.Bundle
+import android.support.annotation.StringRes
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tbruyelle.rxpermissions2.RxPermissions
+import kotlinx.android.synthetic.main.toolbar_view.*
 import me.yokeyword.fragmentation.ISupportFragment
 
 
@@ -26,7 +29,7 @@ abstract class BaseFragment<T : BasePresenter> : BaseAppCompatFragment(), BaseVi
         p = presenter
     }
 
-    override fun onCreateView(inflater: LayoutInflater,  container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
         return view
     }
@@ -38,6 +41,12 @@ abstract class BaseFragment<T : BasePresenter> : BaseAppCompatFragment(), BaseVi
 
 
     abstract fun initView(savedInstanceState: Bundle?)
+
+
+    protected fun initToolBarNav(title: String?, toolbar: Toolbar = toolbar_c) {
+        toolbar_title.text = title
+        toolbar.setNavigationOnClickListener { pop() }
+    }
 
 
     /****
