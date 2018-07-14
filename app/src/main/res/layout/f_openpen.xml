@@ -74,13 +74,20 @@
         app:layout_constraintTop_toTopOf="@+id/text3"
         tools:ignore="RtlHardcoded">
 
-        <android.support.v7.widget.AppCompatRadioButton
+        <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/pen_radiobutton_bg"
+            android:text="@string/painting" />
 
-        <android.support.v7.widget.AppCompatRadioButton
+        <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:button="@drawable/pen_radiobutton_bg"
+            android:text="@string/micro_class" />
 
     </RadioGroup>
 
@@ -103,11 +110,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text3"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
-    <android.support.v7.widget.AppCompatButton
+    <android.support.v7.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:background="@color/c_w"
+        android:drawablePadding="8dp"
         android:drawableRight="@drawable/right_arrows"
         android:text="@string/select"
         android:textSize="@dimen/title_text_size"
