@@ -7,11 +7,9 @@ interface MainContract {
 
     interface MainView : BaseView<MainPresenter> {
 
-
     }
 
     interface MainPresenter:BasePresenter {
-
 
     }
 

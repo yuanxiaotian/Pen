@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android.sdk_version
@@ -54,9 +55,11 @@ dependencies {
     api rootProject.ext.dependencies.fragmentation
     api rootProject.ext.dependencies.rxpermissions
     api rootProject.ext.dependencies.eventbus
+//    api rootProject.ext.dependencies.butterknife
+    api rootProject.ext.dependencies.recyclerview
 
     //后期可选配置引入框架
-    //    api rootProject.ext.dependencies.multiImageSelector
+    //api rootProject.ext.dependencies.multiImageSelector
 }
 repositories {
     mavenCentral()

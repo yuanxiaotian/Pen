@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="36dp"
+    android:layout_height="?actionBarSize"
     android:background="@color/c_w"
-    android:paddingLeft="-10dp"
-    android:paddingStart="-10dp"
-    app:navigationIcon="@drawable/ic_back"
+    app:navigationIcon="@drawable/icon_back"
     tools:ignore="RtlSymmetry">
 
     <TextView

@@ -1,2 +1,11 @@
 <resources>
+    <string name="manage_content">您还未连接任何智能笔,开启连接，开启笔迹之旅。</string>
+    <string name="my_note">我的笔迹</string>
+    <string name="file_list">文件列表</string>
+    <string name="about_note">关于云享笔迹</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="edit_sort">编辑分类</string>
+    <string name="clear_collect">清空收藏</string>
+    <string name="add_sort">新建分类</string>
+    <string name="fileName">文件夹</string>
 </resources>
