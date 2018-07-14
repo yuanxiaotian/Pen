@@ -48,7 +48,6 @@ abstract class BaseFragment<T : BasePresenter> : BaseAppCompatFragment(), BaseVi
         toolbar.setNavigationOnClickListener { pop() }
     }
 
-
     /****
      * 从栈中移除当前fragment
      */
