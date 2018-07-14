@@ -8,5 +8,10 @@
     <string name="clear_collect">清空收藏</string>
     <string name="add_sort">新建分类</string>
     <string name="fileName">文件夹</string>
+    <string name="fileType">文件类型</string>
+    <string name="fileClass">文件分类</string>
+    <string name="handwriting_pressure">笔记压感</string>
     <string name="openPen">开启笔记</string>
+    <string name="edit">请输入</string>
+    <string name="select">请选择</string>
 </resources>
