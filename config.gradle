@@ -38,7 +38,7 @@ ext {
             rxpermissions = "0.9.5@aar",
             eventbus = "3.1.1",
             butterknife="8.4.0",
-            recyclerview="21.0.0"
+            recyclerview="27.1.1"
     ]
 
     dependencies = [
