@@ -32,7 +32,7 @@
 
         <CheckBox
             style="@style/custom_checkbox"
-            android:checked="true"
+            android:checked="false"
             android:id="@+id/iv_manage"
             android:layout_marginRight="10dp"
             android:layout_gravity="center_vertical"
@@ -108,6 +108,17 @@
             android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/tv_dele"
+            android:textColor="#0adcc3"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="删除智能笔"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </RelativeLayout>
 

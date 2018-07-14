@@ -47,7 +47,21 @@ public class OpenPenAdapter extends BaseAdapter {
         }else{
             holder = (OpenHolder) convertView.getTag();
         }
+        convertView.setOnClickListener(v->{
+            if (callBack!=null)
+                callBack.ConnectInfo(position);
+        });
         return convertView;
+    }
+
+    private CallBack callBack;
+
+    public void setCallBack(CallBack callBack) {
+        this.callBack = callBack;
+    }
+
+    public interface CallBack{
+        void ConnectInfo(int position);
     }
 
     class OpenHolder{
