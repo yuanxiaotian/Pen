@@ -51,6 +51,7 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
             f_editSort -> start(EditSortFragment())
             f_openPen -> start(OpenPenFragment())
             f_often_conn -> start(OftenConnFragment())
+            f_select_class -> start(SelectClass())
         }
     }
 
