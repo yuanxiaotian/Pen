@@ -52,6 +52,11 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
             f_openPen -> start(OpenPenFragment())
             f_often_conn -> start(OftenConnFragment())
             f_select_class -> start(SelectClass())
+            f_edit_handwriting -> {
+                val edit = EditHandwriting()
+                edit.arguments = event.bundle
+                start(edit)
+            }
         }
     }
 

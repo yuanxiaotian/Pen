@@ -41,13 +41,13 @@ public class OperPenFragment extends BaseFragment<OpenPenContract.Presenter> {
 
     private void initListener(){
         nearbyAdapter.setCallBack(position -> {
-            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn()));
+            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn(),null));
         });
 //        oftenRecycler.setOnItemClickListener((parent,view,position,id)->{
 //            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn()));
 //        });
         nearbyAdapter.setCallBack(position -> {
-            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn()));
+            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn(),null));
         });
     }
 

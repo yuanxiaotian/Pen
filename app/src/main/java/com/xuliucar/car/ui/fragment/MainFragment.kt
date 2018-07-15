@@ -22,17 +22,17 @@ class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
     override fun initView(savedInstanceState: Bundle?) {
         //开启笔记
         iv_c.setOnClickListener {
-            EventBus.getDefault().post(AppEvent(f_openPen))
+            EventBus.getDefault().post(AppEvent(f_openPen, null))
         }
 
         //智能笔管理
         bt_manage.setOnClickListener {
-            EventBus.getDefault().post(AppEvent(f_penManage))
+            EventBus.getDefault().post(AppEvent(f_penManage, null))
         }
 
         //我的笔记
         bt_mePen.setOnClickListener {
-            EventBus.getDefault().post(AppEvent(f_myNote))
+            EventBus.getDefault().post(AppEvent(f_myNote, null))
         }
     }
 }

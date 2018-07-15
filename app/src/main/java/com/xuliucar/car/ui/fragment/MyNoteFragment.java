@@ -43,13 +43,13 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fileList://文件列表
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_fileList()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_fileList(),null));
                 break;
             case R.id.myCollect://我的收藏
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_myCollect()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_myCollect(),null));
                 break;
             case R.id.aboutNote://关于云享笔迹
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote(),null));
                 break;
         }
     }

@@ -45,7 +45,7 @@ public class FileListFragment extends BaseFragment {
 
     @Override
     public void onRightClick(){
-        EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_editSort()));
+        EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_editSort(),null));
     }
 
     @Override

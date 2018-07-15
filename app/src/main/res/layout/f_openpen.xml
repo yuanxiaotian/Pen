@@ -33,6 +33,7 @@
             android:textSize="@dimen/title_text_size" />
 
         <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -157,6 +158,7 @@
 
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_create"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"

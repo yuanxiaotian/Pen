@@ -18,3 +18,5 @@ val f_openPen = 0x119
 val f_often_conn = 0x120
 
 val f_select_class = 0x121
+
+val f_edit_handwriting = 0x122
