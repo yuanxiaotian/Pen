@@ -6,7 +6,6 @@ import com.cangmaomao.lib.action.f_openPen
 import com.cangmaomao.lib.action.f_penManage
 import com.cangmaomao.lib.base.BaseFragment
 import com.cangmaomao.lib.event.AppEvent
-import com.cangmaomao.lib.utils.toast
 import com.xuliucar.car.R
 import com.xuliucar.car.contract.MainContract
 import kotlinx.android.synthetic.main.f_main.*

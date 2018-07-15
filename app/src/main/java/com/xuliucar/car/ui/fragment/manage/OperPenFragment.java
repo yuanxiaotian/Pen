@@ -3,13 +3,10 @@ package com.xuliucar.car.ui.fragment.manage;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.cangmaomao.lib.action.FragmentActionKt;
-import com.cangmaomao.lib.event.AppEvent;
-
 import com.cangmaomao.lib.base.BaseFragment;
+import com.cangmaomao.lib.event.AppEvent;
 import com.xuliucar.car.R;
 import com.xuliucar.car.adapter.OpenPenAdapter;
 import com.xuliucar.car.contract.OpenPenContract;
