@@ -20,7 +20,7 @@ public class DeleConnDialog extends AlertDialog {
 
     private View mView;
     private ImageView dele_Close;
-    private LinearLayout l_commit;
+    public LinearLayout l_commit;
     private Context mContext;
 
     public DeleConnDialog(Context context) {

@@ -20,7 +20,7 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(getString(R.string.my_note), getMView().findViewById(R.id.toolbar_c));
+        initToolBarNav(getString(R.string.my_note),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c));
         fileList = getMView().findViewById(R.id.fileList);
         myCollect = getMView().findViewById(R.id.myCollect);
         aboutNote = getMView().findViewById(R.id.aboutNote);
@@ -43,14 +43,19 @@ public class MyNoteFragment extends BaseFragment implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fileList://文件列表
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_fileList()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_fileList(),null));
                 break;
             case R.id.myCollect://我的收藏
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_myCollect()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_myCollect(),null));
                 break;
             case R.id.aboutNote://关于云享笔迹
-                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote()));
+                EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_aboutNote(),null));
                 break;
         }
+    }
+
+    @Override
+    public void onRightClick(){
+
     }
 }

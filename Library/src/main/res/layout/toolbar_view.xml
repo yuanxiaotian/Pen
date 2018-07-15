@@ -24,7 +24,6 @@
             android:layout_marginRight="1dp"
             android:padding="5dp"
             android:singleLine="true"
-            android:text="subtitle"
             android:textColor="@color/c_text_color"
             android:textSize="@dimen/title_text_right_size" />
 
@@ -37,7 +36,6 @@
             android:ellipsize="end"
             android:lines="1"
             android:scrollHorizontally="true"
-            android:text="title"
             android:textColor="@color/c_text_color"
             android:textSize="@dimen/title_text_size" />
 

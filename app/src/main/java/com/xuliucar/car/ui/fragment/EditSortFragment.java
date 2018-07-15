@@ -4,9 +4,6 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -34,7 +31,7 @@ public class EditSortFragment extends BaseFragment implements EditSortAdapter.On
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar), R.string.edit_sort);
+        initToolBarNav(getString(R.string.edit_sort),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c),getString(R.string.add_sort));
         listView=getMView().findViewById(R.id.listView);
         dialog=new AlertDialog.Builder(getMContext()).create();
         initData();
@@ -54,6 +51,32 @@ public class EditSortFragment extends BaseFragment implements EditSortAdapter.On
     }
 
     @Override
+    public void onRightClick(){
+        View view = LayoutInflater.from(getMContext()).inflate(R.layout.dialog_add_sort, null);
+        EditText sortName=view.findViewById(R.id.sortName);
+        TextView cancel=view.findViewById(R.id.cancel);
+        TextView sure=view.findViewById(R.id.sure);
+        cancel.setOnClickListener(v -> {
+            //取消
+            dialog.dismiss();
+        });
+        sure.setOnClickListener(v -> {
+            //确定
+            String content=sortName.getText().toString();
+            if (TextUtils.isEmpty(content)){
+                Toast.makeText(getMContext(),"请输入分类名",Toast.LENGTH_SHORT).show();
+                return;
+            }
+            data.add(new EditSortBean(content,false));
+            adapter.notifyDataSetChanged();
+            sortName.getText().clear();
+            dialog.dismiss();
+        });
+        dialog.setView(view);
+        dialog.show();
+    }
+
+    @Override
     protected int getContentViewLayoutID() {
         return R.layout.f_edit_sort;
     }
@@ -61,41 +84,6 @@ public class EditSortFragment extends BaseFragment implements EditSortAdapter.On
     @Override
     public void setPresenter(Object presenter) {
 
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.edit_sort_menu, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.preview) {
-            View view = LayoutInflater.from(getMContext()).inflate(R.layout.dialog_add_sort, null);
-            EditText sortName=view.findViewById(R.id.sortName);
-            TextView cancel=view.findViewById(R.id.cancel);
-            TextView sure=view.findViewById(R.id.sure);
-            cancel.setOnClickListener(v -> {
-                //取消
-                dialog.dismiss();
-            });
-            sure.setOnClickListener(v -> {
-                //确定
-                String content=sortName.getText().toString();
-                if (TextUtils.isEmpty(content)){
-                    Toast.makeText(getMContext(),"请输入分类名",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                data.add(new EditSortBean(content,false));
-                adapter.notifyDataSetChanged();
-                sortName.getText().clear();
-                dialog.dismiss();
-            });
-            dialog.setView(view);
-            dialog.show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

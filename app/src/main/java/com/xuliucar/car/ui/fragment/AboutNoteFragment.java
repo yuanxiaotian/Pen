@@ -19,8 +19,7 @@ public class AboutNoteFragment extends BaseFragment {
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        initToolBarNav(Objects.requireNonNull(getMView()).findViewById(R.id.toolbar),
-                R.string.about_note);
+        initToolBarNav(getString(R.string.about_note),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c));
         mVersionName=getMView().findViewById(R.id.versionName);
         mVersionName.setText(String.valueOf("版本：V"+versionName));
     }
@@ -36,6 +35,11 @@ public class AboutNoteFragment extends BaseFragment {
             e.printStackTrace();
         }
         return R.layout.f_about_note;
+    }
+
+    @Override
+    public void onRightClick(){
+
     }
 
     @Override

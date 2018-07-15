@@ -12,6 +12,7 @@ import com.cangmaomao.m_penManage.adapter.NearbyAdapter;
 import com.cangmaomao.m_penManage.adapter.OpenPenAdapter;
 import com.cangmaomao.m_penManage.bean.OpenManageInfo;
 import com.cangmaomao.m_penManage.contract.OperPenContract;
+import com.cangmaomao.m_penManage.literal.Contract;
 import com.cangmaomao.m_penManage.view.NotScrollListview;
 
 import org.greenrobot.eventbus.EventBus;
@@ -33,11 +34,13 @@ public class OperPenFragment extends BaseFragment<OperPenContract.Presenter> {
     private View addHeaderView;
     private List<OpenManageInfo>openList = new ArrayList<>();
     private List<OpenManageInfo>nearbyList = new ArrayList<>();
+    private Bundle bundle;
 
     @Override
     public void initView(Bundle savedInstanceState) {
         oftenRecycler = getMView().findViewById(R.id.oftenRecycler);
         nearbyRecycler =getMView().findViewById(R.id.nearbyRecycler);
+        bundle = new Bundle();
         initData();
         openPenAdapter = new OpenPenAdapter(openList);
         oftenRecycler.setAdapter(openPenAdapter);
@@ -59,11 +62,14 @@ public class OperPenFragment extends BaseFragment<OperPenContract.Presenter> {
     }
 
     private void initListener(){
-        nearbyAdapter.setCallBack(position -> {
-            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn()));
+        openPenAdapter.setCallBack((info,poistion)  -> {
+            bundle.putSerializable(Contract.OPENNAME,info);
+            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn(),bundle));
         });
-        nearbyAdapter.setCallBack(position -> {
-            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn()));
+        nearbyAdapter.setCallBack((info,poistion) -> {
+            bundle.putSerializable(Contract.OPENNAME,info);
+            EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_often_conn(),
+                    bundle));
         });
     }
 
@@ -72,4 +78,8 @@ public class OperPenFragment extends BaseFragment<OperPenContract.Presenter> {
         return R.layout.f_open_pen;
     }
 
+    @Override
+    public void onRightClick(){
+
+    }
 }

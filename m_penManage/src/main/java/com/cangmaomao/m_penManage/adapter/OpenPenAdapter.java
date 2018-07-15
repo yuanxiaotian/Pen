@@ -55,7 +55,7 @@ public class OpenPenAdapter extends BaseAdapter {
         holder.tv_open_author.setText(manageInfos.get(position).getOpenName());
         convertView.setOnClickListener(v->{
             if (callBack!=null)
-                callBack.ConnectInfo(position);
+                callBack.ConnectInfo(manageInfos.get(position),position);
         });
         return convertView;
     }
@@ -67,7 +67,7 @@ public class OpenPenAdapter extends BaseAdapter {
     }
 
     public interface CallBack{
-        void ConnectInfo(int position);
+        void ConnectInfo(OpenManageInfo info,int position);
     }
 
     class OpenHolder{
