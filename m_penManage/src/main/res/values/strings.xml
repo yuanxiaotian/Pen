@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">M_Mine</string>
+    <string name="manage_content">您还未连接任何智能笔,开启连接，开启笔迹之旅。</string>
 </resources>

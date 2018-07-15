@@ -1,12 +1,12 @@
-package com.xuliucar.car.ui.fragment.manage;
+package com.cangmaomao.m_penManage.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.cangmaomao.lib.base.BaseFragment;
-import com.xuliucar.car.R;
-import com.xuliucar.car.view.dialog.DeleConnDialog;
+import com.cangmaomao.m_penManage.R;
+import com.cangmaomao.m_penManage.view.dialog.DeleConnDialog;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -21,8 +21,8 @@ public class OftenConnFragment extends BaseFragment {
     private DeleConnDialog dialog;
 
     @Override
-    public void initView() {
-        toolbar = getMView().findViewById(R.id.toolbar);
+    public void initView(@Nullable Bundle savedInstanceState) {
+        toolbar = getMView().findViewById(R.id.toolbar_c);
         tv_dele = getMView().findViewById(R.id.tv_dele);
         initToolBarNav("连接智能笔",toolbar);
 //        initToolBarNav(toolbar,"连接智能笔");

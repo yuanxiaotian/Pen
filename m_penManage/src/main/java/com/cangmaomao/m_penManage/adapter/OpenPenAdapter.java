@@ -1,4 +1,4 @@
-package com.xuliucar.car.adapter;
+package com.cangmaomao.m_penManage.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,7 +6,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.xuliucar.car.R;
+import com.cangmaomao.m_penManage.R;
+import com.cangmaomao.m_penManage.bean.OpenManageInfo;
+
+import java.util.List;
+
 
 /**
  * Created by Administrator on 2018/7/13 0013.
@@ -14,20 +18,20 @@ import com.xuliucar.car.R;
 
 public class OpenPenAdapter extends BaseAdapter {
 
-    private int count;
+   private List<OpenManageInfo> manageInfos;
 
-    public OpenPenAdapter( int count){
-        this.count =count;
+    public OpenPenAdapter(List<OpenManageInfo> manageInfos){
+        this.manageInfos =manageInfos;
     }
 
     @Override
     public int getCount() {
-        return count;
+        return manageInfos.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return position;
+        return manageInfos.get(position);
     }
 
     @Override
@@ -43,10 +47,12 @@ public class OpenPenAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_oper_pen,null);
             holder = new OpenHolder();
+            holder.tv_open_author = convertView.findViewById(R.id.tv_open_author);
             convertView.setTag(holder);
         }else{
             holder = (OpenHolder) convertView.getTag();
         }
+        holder.tv_open_author.setText(manageInfos.get(position).getOpenName());
         convertView.setOnClickListener(v->{
             if (callBack!=null)
                 callBack.ConnectInfo(position);

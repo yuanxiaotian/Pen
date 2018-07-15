@@ -22,7 +22,6 @@ class MainFragment() : BaseFragment<MainContract.MainPresenter>() {
         iv_c.setOnClickListener {
             EventBus.getDefault().post(AppEvent(f_openPen))
         }
-
         //智能笔管理
         bt_manage.setOnClickListener {
             EventBus.getDefault().post(AppEvent(f_penManage))

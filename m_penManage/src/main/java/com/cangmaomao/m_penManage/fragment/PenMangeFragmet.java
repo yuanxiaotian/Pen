@@ -1,15 +1,13 @@
-package com.xuliucar.car.ui.fragment.manage;
+package com.cangmaomao.m_penManage.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 
 import com.cangmaomao.lib.base.BaseFragment;
-import com.xuliucar.car.R;
+import com.cangmaomao.m_penManage.R;
 import com.xuliucar.car.contract.PenManageContract;
 
 import java.util.Objects;
@@ -27,14 +25,9 @@ public class PenMangeFragmet extends BaseFragment<PenManageContract.ManagePresen
     @Override
     public void initView(Bundle savedInstanceState) {
         toolbar = Objects.requireNonNull(getMView())
-<<<<<<< HEAD
-                .findViewById(R.id.toolbar);
-        initToolBarNav("智能笔管理",toolbar);
-//        initToolBarNav(toolbar,"智能笔管理");
-=======
                 .findViewById(R.id.toolbar_c);
+//      initToolBarNav("智能笔管理",toolbar);
         initToolBarNav(toolbar,"智能笔管理");
->>>>>>> 7c681d958c0b05f2377c7f223cbfcbfcc4c34aa8
         loadRootFragment(R.id.fl_manage, new OperPenFragment());
         iv_manage=  getMView().findViewById(R.id.iv_manage);
         fl_manage = getMView().findViewById(R.id.fl_manage);

@@ -4,11 +4,11 @@ import com.cangmaomao.lib.action.*
 import com.cangmaomao.lib.base.BaseActivity
 import com.cangmaomao.lib.event.AppEvent
 import com.cangmaomao.lib.utils.StatusBarUtil
+import com.cangmaomao.m_penManage.fragment.OftenConnFragment
+import com.cangmaomao.m_penManage.fragment.PenMangeFragmet
 import com.xuliucar.car.R
 import com.xuliucar.car.contract.MainContract
 import com.xuliucar.car.ui.fragment.*
-import com.xuliucar.car.ui.fragment.manage.OftenConnFragment
-import com.xuliucar.car.ui.fragment.manage.PenMangeFragmet
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

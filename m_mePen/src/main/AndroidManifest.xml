@@ -2,16 +2,6 @@
     package="com.cangmaomao.m_mePen">
 
     <application>
-        <activity android:name="com.cangmaomao.m_mePen.TestFragment2">
-            <intent-filter>
-                <data
-                    android:host="test2"
-                    android:scheme="other" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
