@@ -56,6 +56,15 @@ abstract class BaseFragment<T : BasePresenter> : BaseAppCompatFragment(), BaseVi
         })
     }
 
+    protected fun initToolBarNav(title: String?, subTitle: String?, toolbar: Toolbar = toolbar_c) {
+        toolbar_title.text = title
+        toolbar_subtitle.text = subTitle
+        toolbar.setNavigationOnClickListener { pop() }
+        toolbar_subtitle.setOnClickListener({
+            onRightClick()
+        })
+    }
+
     abstract fun onRightClick()
 
     /****

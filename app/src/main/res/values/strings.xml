@@ -16,4 +16,5 @@
     <string name="select">请选择</string>
     <string name="painting">绘画/笔迹</string>
     <string name="micro_class">微课</string>
+    <string name="new_class">新建分类</string>
 </resources>
