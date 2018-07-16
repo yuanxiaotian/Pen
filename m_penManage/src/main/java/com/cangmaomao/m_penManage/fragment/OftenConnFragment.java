@@ -80,6 +80,7 @@ public class OftenConnFragment extends BaseFragment {
             }
         });
         b_commit.setOnClickListener(v->{
+
             pop();
         });
     }
