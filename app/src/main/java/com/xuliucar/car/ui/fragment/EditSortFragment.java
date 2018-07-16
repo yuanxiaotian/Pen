@@ -1,6 +1,8 @@
 package com.xuliucar.car.ui.fragment;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -74,6 +76,7 @@ public class EditSortFragment extends BaseFragment implements EditSortAdapter.On
         });
         dialog.setView(view);
         dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));  // 有白色背景，加这句代码
     }
 
     @Override

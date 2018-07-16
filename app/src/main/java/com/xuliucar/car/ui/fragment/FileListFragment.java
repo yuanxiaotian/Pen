@@ -1,6 +1,8 @@
 package com.xuliucar.car.ui.fragment;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.cangmaomao.lib.action.FragmentActionKt;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class FileListFragment extends BaseFragment {
+public class FileListFragment extends BaseFragment implements AdapterView.OnItemClickListener{
 
     private ListView listView;
     private List<FileListBean> data = new ArrayList<>();
@@ -27,6 +29,7 @@ public class FileListFragment extends BaseFragment {
     public void initView(@Nullable Bundle savedInstanceState) {
         initToolBarNav(getString(R.string.file_list),Objects.requireNonNull(getMView()).findViewById(R.id.toolbar_c),getString(R.string.edit_sort));
         listView = getMView().findViewById(R.id.listView);
+        listView.setOnItemClickListener(this);
         initData();
     }
 
@@ -56,5 +59,12 @@ public class FileListFragment extends BaseFragment {
     @Override
     public void setPresenter(Object presenter) {
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Bundle bundle=new Bundle();
+        bundle.putString("name",data.get(position).getFileName());
+        EventBus.getDefault().post(new AppEvent(FragmentActionKt.getF_sortList(),bundle));
     }
 }

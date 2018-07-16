@@ -11,29 +11,38 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cangmaomao.lib.utils.GlideImageLoader;
 import com.xuliucar.car.R;
-import com.xuliucar.car.bean.MyCollectBean;
+import com.xuliucar.car.bean.SortListBean;
 
 import java.util.List;
 
-public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.ViewHolder> {
+public class SortListAdapter extends RecyclerView.Adapter<SortListAdapter.ViewHolder> {
 
     private Context context;
-    private List<MyCollectBean> data;
+    private List<SortListBean> data;
     private OnShareClickListener onShareClickListener;
     private IsCollectClickListener isCollectClickListener;
+    private IsDeleteClickListener isDeleteClickListener;
+    private boolean isEdit;//是否编辑
 
-    public MyCollectAdapter(Context context, List<MyCollectBean> data,OnShareClickListener onShareClickListener,IsCollectClickListener isCollectClickListener) {
+    public SortListAdapter(Context context, List<SortListBean> data, OnShareClickListener onShareClickListener,
+                           IsCollectClickListener isCollectClickListener,IsDeleteClickListener isDeleteClickListener) {
         this.context = context;
         this.data = data;
         this.onShareClickListener=onShareClickListener;
         this.isCollectClickListener=isCollectClickListener;
+        this.isDeleteClickListener=isDeleteClickListener;
+    }
+
+    public void setData(boolean isEdit){
+        this.isEdit=isEdit;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_my_collect,parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_sort_list,parent,false));
     }
 
     @Override
@@ -62,6 +71,16 @@ public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.View
         }else {
             holder.item_collect.setImageResource(R.drawable.icon_collect_img_unnormal);
         }
+        if (isEdit){
+            holder.item_checked.setVisibility(View.VISIBLE);
+            if (data.get(position).isDelete()){
+                holder.item_checked.setImageResource(R.drawable.icon_checked_normal);
+            }else {
+                holder.item_checked.setImageResource(R.drawable.icon_checked_unnormal);
+            }
+        }else {
+            holder.item_checked.setVisibility(View.GONE);
+        }
         holder.item_content.setText(data.get(position).getContent());
         holder.item_share.setOnClickListener(v -> {
             //分享
@@ -70,6 +89,10 @@ public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.View
         holder.item_collect.setOnClickListener(v -> {
             //收藏
             isCollectClickListener.isCollect(position);
+        });
+        holder.item_checked.setOnClickListener(v -> {
+            //是否删除
+            isDeleteClickListener.isDelete(position);
         });
     }
 
@@ -81,7 +104,7 @@ public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.View
     class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView item_time,item_content;
-        ImageView item_collect,item_share,item_img,item_video_img,item_startVideo;
+        ImageView item_collect,item_share,item_img,item_video_img,item_startVideo,item_checked;
         FrameLayout item_video;
 
         public ViewHolder(View itemView) {
@@ -94,6 +117,7 @@ public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.View
             item_video_img=itemView.findViewById(R.id.item_video_img);
             item_startVideo=itemView.findViewById(R.id.item_startVideo);
             item_video=itemView.findViewById(R.id.item_video);
+            item_checked=itemView.findViewById(R.id.item_checked);
         }
     }
 
@@ -103,5 +127,9 @@ public class MyCollectAdapter extends RecyclerView.Adapter<MyCollectAdapter.View
 
     public interface IsCollectClickListener{
         void isCollect(int position);
+    }
+
+    public interface IsDeleteClickListener{
+        void isDelete(int position);
     }
 }

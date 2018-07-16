@@ -1,6 +1,8 @@
 package com.xuliucar.car.bean;
 
-public class FileListBean {
+import java.io.Serializable;
+
+public class FileListBean implements Serializable {
     private String fileName;
     private int fileNum;
 

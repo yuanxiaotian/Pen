@@ -61,6 +61,11 @@ class MainActivity : BaseActivity<MainContract.MainPresenter>() {
                 edit.arguments = event.bundle
                 start(edit)
             }
+            f_sortList->{
+                val edit = SortListFragment()
+                edit.arguments = event.bundle
+                start(edit)
+            }
         }
     }
 

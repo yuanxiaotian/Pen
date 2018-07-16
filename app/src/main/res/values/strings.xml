@@ -17,4 +17,18 @@
     <string name="painting">绘画/笔迹</string>
     <string name="micro_class">微课</string>
     <string name="new_class">新建分类</string>
+    <string name="sureClearCollect">确定要清空当前所有收藏？</string>
+    <string name="sure">确定</string>
+    <string name="kindlyReminder">温馨提示</string>
+    <string name="shareTo">分享至</string>
+    <string name="shareWx">微信</string>
+    <string name="shareQQ">QQ</string>
+    <string name="shareFriend">朋友圈</string>
+    <string name="addSort">新建分类</string>
+    <string name="inputSortName">输入分类名</string>
+    <string name="cancel">取消</string>
+    <string name="editData">编辑</string>
+    <string name="allChecked">全选</string>
+    <string name="delete">删除</string>
+    <string name="sureDeleteFile">确定要删除当前文件吗?</string>
 </resources>
